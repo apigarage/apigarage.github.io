@@ -1,22 +1,86 @@
 ---
 layout: default
 ---
+
 <div class="clear"></div>
 
 <!--=== Breadcrumbs v1 ===-->
-<div class="breadcrumbs-v1">
+<!-- <div class="breadcrumbs-v1">
   <div class="container">
     <span>Blog Page</span>
     <h1>Basic Medium Posts</h1>
   </div>
-</div>
+</div> -->
 <!--=== End Breadcrumbs v1 ===-->
+
+<!--=== Blog Posts ===-->
+<div class="container content-md">
+  <div class="row">
+    <!-- Blog All Posts -->
+    <div class="col-md-9">
+
+    {% for post in site.posts %}
+
+      <!-- <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <p><small><strong>{{ post.date | date: "%B %e, %Y" }}</strong> . {{ post.category }} . <a href="http://erjjones.github.com{{ post.url }}#disqus_thread"></a></small></p> -->
+
+      <div class="row margin-bottom-20">
+        <div class="col-sm-5 sm-margin-bottom-20">
+          <img class="img-responsive" src="{{ site.url }}/assets/img/posts/{{ post.largeImage }}" alt="">
+        </div>
+        <div class="col-sm-7 news-v3">
+          <div class="news-v3-in-sm no-padding">
+            <ul class="list-inline posted-info">
+              <li>
+                {% if post.author %}
+                  {{ post.author }}
+                {% else if %}
+                  API Garage
+                {% endif %}
+              </li>
+              <li>{{ post.date | date: "%b %-d, %Y" }}</li>
+            </ul>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p>{{ post.excerpt }}</p>
+            <ul class="post-shares">
+              <!-- <li>
+                <a href="#">
+                  <i class="rounded-x icon-speech"></i>
+                  <span>5</span>
+                </a>
+              </li> -->
+              <!-- <li><a href="#"><i class="rounded-x icon-share"></i></a></li> -->
+              <!-- <li><a href="#"><i class="rounded-x icon-heart"></i></a></li> -->
+            </ul>
+          </div>
+        </div>
+      </div><!--/end row-->
+
+      <div class="clearfix margin-bottom-20"><hr></div>
+
+    {% endfor %}
+
+      <!-- Pager v3
+      <ul class="pager pager-v3 pager-sm no-margin-bottom">
+        <li class="previous"><a href="#">&larr; Older</a></li>
+        <li class="page-amount">1 of 7</li>
+        <li class="next"><a href="#">Newer &rarr;</a></li>
+      </ul>
+      <!-- End Pager v3 -->
+    </div>
+    <!-- End Blog All Posts -->
+
+    <!-- Blog Sidebar -->
+    <div class="col-md-3">
+      {% include blogitem/right-side-about-us.html %}
+      {% include blogitem/right-side-posts.html %}
+    </div>
+    <!-- End Blog Sidebar -->
+  </div>
+</div>
+<!--=== End Blog Posts ===-->
 
 <div class="service-info">
   <div class="container">
-    {% for post in site.posts %}
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p><small><strong>{{ post.date | date: "%B %e, %Y" }}</strong> . {{ post.category }} . <a href="http://erjjones.github.com{{ post.url }}#disqus_thread"></a></small></p>
-    {% endfor %}
   </div>
 </div>

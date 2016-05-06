@@ -1,15 +1,170 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+  <div class="container">
+    <ul class="pull-right breadcrumb">
+      <li><a href="{{site.url}}">Home</a></li>
+      <li><a href="{{site.url}}/posts.html">Blogs</a></li>
+    </ul>
   </div>
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
 
-</article>
+<!--=== Content Part ===-->
+<div class="container content">
+  <div class="row blog-page blog-item">
+
+    <!-- Left Sidebar -->
+    <div class="col-md-9 md-margin-bottom-60">
+      <!--Blog Post-->
+      <div itemscope itemtype="http://schema.org/BlogPosting" class="blog margin-bottom-40">
+        <h2 itemprop="name headline">{{ page.title }}</h2>
+        <div class="blog-post-tags">
+          <ul class="list-unstyled list-inline blog-info">
+            <li><i class="fa fa-calendar"></i>
+              <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {{ page.date | date: "%b %-d, %Y" }}
+              </time>
+            </li>
+            <li><i class="fa fa-pencil"></i>
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span itemprop="name">
+                  {% if page.author %}
+                    {{ page.author }}
+                  {% else %}
+                    API Garage
+                  {% endif %}
+                </span>
+              </span>
+            </li>
+            <!-- <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li> -->
+          </ul>
+          <!-- <ul class="list-unstyled list-inline blog-tags">
+            <li>
+              <i class="fa fa-tags"></i>
+              <a href="#">Technology</a>
+              <a href="#">Education</a>
+              <a href="#">Internet</a>
+              <a href="#">Media</a>
+            </li>
+          </ul> -->
+        </div>
+
+        <div class="post-content" itemprop="articleBody">
+          {% if page.largeImage %}
+            <div class="blog-img">
+              <img class="img-responsive" src="{{ site.url }}/assets/img/posts/{{ page.largeImage }}" alt="">
+            </div>
+          {% endif %}
+          {{ content }}
+        </div>
+        <!-- <div class="blog-img">
+          <img class="img-responsive" src="assets/img/sliders/11.jpg" alt="">
+        </div>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, mollitia animi, id est laborum et dolorum fug consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna.</p><br>
+        <div class="tag-box tag-box-v2">
+          <p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet consectetur adipiscing elit. Fusce condimentum eleifend enim a feugiatt non libero consectetur adipiscing elit magna. Sed et quam lacus. Condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
+        </div>
+        <p>Officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, mollitia animi, id est laborum et dolorum fug consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend.</p>
+        <p>Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum</p><br>
+        <blockquote>
+          <p>Award winning digital agency. We bring a personal and effective approach to every project we work on, which is why.</p>
+          <small>CEO Jack Bour</small>
+        </blockquote>
+        <p>Deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, mollitia animi, id est laborum et dolorum fug consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus.</p> -->
+      </div>
+      <!--End Blog Post-->
+
+      <hr>
+
+      <!-- Recent Comments -->
+      <h1> Comments will go here </h1>
+      <!-- End Recent Comments -->
+      <hr>
+
+    </div>
+    <!-- End Left Sidebar -->
+
+    <!-- Right Sidebar -->
+    <div class="col-md-3 magazine-page">
+
+      {% include blogitem/right-side-about-us.html %}
+      {% include blogitem/right-side-posts.html %}
+
+      <!-- Photo Stream
+      <div class="headline headline-md"><h2>Photo Stream</h2></div>
+      <ul class="list-unstyled blog-photos margin-bottom-30">
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/5.jpg"></a></li>
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/6.jpg"></a></li>
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/8.jpg"></a></li>
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/10.jpg"></a></li>
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/11.jpg"></a></li>
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/1.jpg"></a></li>
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/2.jpg"></a></li>
+        <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/7.jpg"></a></li>
+      </ul>
+      <!-- End Photo Stream -->
+
+      <!-- Blog Tags
+      <div class="headline headline-md"><h2>Blog Tags</h2></div>
+      <ul class="list-unstyled blog-tags margin-bottom-30">
+        <li><a href="#"><i class="fa fa-tags"></i> Business</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Music</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Internet</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Money</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Google</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> TV Shows</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Education</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> People</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> People</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Math</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Photos</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Electronics</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Apple</a></li>
+        <li><a href="#"><i class="fa fa-tags"></i> Canada</a></li>
+      </ul>
+      <!-- End Blog Tags -->
+
+      <!-- Blog Latest Tweets
+      <div class="blog-twitter margin-bottom-30">
+        <div class="headline headline-md"><h2>Latest Tweets</h2></div>
+        <div class="blog-twitter-inner">
+          <i class="fa fa-twitter"></i>
+          <a href="#">@htmlstream</a>
+          At vero eos et accusamus et iusto odio dignissimos.
+          <a href="#">http://t.co/sBav7dm</a>
+          <span>5 hours ago</span>
+        </div>
+        <div class="blog-twitter-inner">
+          <i class="fa fa-twitter"></i>
+          <a href="#">@htmlstream</a>
+          At vero eos et accusamus et iusto odio dignissimos.
+          <a href="#">http://t.co/sBav7dm</a>
+          <span>5 hours ago</span>
+        </div>
+        <div class="blog-twitter-inner">
+          <i class="fa fa-twitter"></i>
+          <a href="#">@htmlstream</a>
+          At vero eos et accusamus et iusto odio dignissimos.
+          <a href="#">http://t.co/sBav7dm</a>
+          <span>5 hours ago</span>
+        </div>
+        <div class="blog-twitter-inner">
+          <i class="fa fa-twitter"></i>
+          <a href="#">@htmlstream</a>
+          At vero eos et accusamus et iusto odio dignissimos.
+          <a href="#">http://t.co/sBav7dm</a>
+          <span>5 hours ago</span>
+        </div>
+      </div>
+      <!-- End Blog Latest Tweets -->
+    </div>
+
+    <!-- End Right Sidebar -->
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part ===-->

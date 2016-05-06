@@ -140,3 +140,15 @@ select::-ms-expand {
 .ag-color-primary {
 	color: #FAC51C
 }
+
+.header-spacer {
+	height:100px;
+	display:block;
+}
+
+@media (max-width: 978px) {
+	.header-spacer {
+		height:0px;
+		display:block;
+	}
+}

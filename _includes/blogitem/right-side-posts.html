@@ -1,0 +1,17 @@
+<!-- Posts -->
+<div class="posts margin-bottom-40">
+  <div class="headline headline-md"><h2>Recent Posts</h2></div>
+  {% for post in site.posts limit:1 %}
+  <dl class="dl-horizontal">
+    <dt><a href="{{post.url}}"><img src="{{ site.url }}/assets/img/posts/{{ post.smallImage }}" alt="" /></a></dt>
+    <dd>
+      <p><a href="{{post.url}}">{{ post.title }}</a></p>
+      <p>
+        {% if post.excerpt %}
+          {{ post.excerpt | truncate : 100 }}
+        {% endif %}
+      </p>
+    </dd>
+  </dl>
+  {% endfor %}
+</div><!--/posts-->
