@@ -10,7 +10,7 @@ title: API Garage
 email: cpatel@apigarage.com
 description: Master API workflows and toolset
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://apigarage.com"
+url: "http://apigarage.github.io"
 twitter_username: apigarage
 github_username:  apigarage
 
