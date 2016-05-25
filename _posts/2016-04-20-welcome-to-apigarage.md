@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to API Garage!"
-date:   2016-04-19 08:06:38 -0400
+title:  "Welcome to API Garage's First Post!"
+date:   2016-04-20 08:06:38 -0400
 categories: apigarage introduction
 author: Chinmay Patel
 largeImage: welcome-large.jpg
