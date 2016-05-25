@@ -1,5 +1,7 @@
 ---
 layout: default
+published: true
+
 ---
 
 <div class="clear"></div>
@@ -21,7 +23,7 @@ layout: default
 
     {% for post in site.posts %}
 
-      {% if post.blogType == "whitepaper" %}
+      {% if post.blogType != "whitepaper" %}
         {% continue %}
       {% endif %}
 
@@ -60,14 +62,6 @@ layout: default
       <div class="clearfix margin-bottom-20"><hr></div>
 
     {% endfor %}
-
-      <!-- Pager v3
-      <ul class="pager pager-v3 pager-sm no-margin-bottom">
-        <li class="previous"><a href="#">&larr; Older</a></li>
-        <li class="page-amount">1 of 7</li>
-        <li class="next"><a href="#">Newer &rarr;</a></li>
-      </ul>
-      <!-- End Pager v3 -->
     </div>
     <!-- End Blog All Posts -->
 

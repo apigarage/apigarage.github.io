@@ -1,7 +1,21 @@
 <!-- Posts -->
 <div class="posts margin-bottom-40">
   <div class="headline headline-md"><h2>Recent Posts</h2></div>
-  {% for post in site.posts limit:1 %}
+  {% assign num_posts_counter = 0 %}
+
+  {% for post in site.posts %}
+
+    {% if num_posts_counter == 1 %}
+      {% break %}
+    {% endif %}
+
+    {% if post.blogType == "whitepaper" %}
+      {% continue %}
+    {% endif %}
+
+    {% assign num_posts_counter = num_posts_counter + 1 %}
+
+
   <dl class="dl-horizontal">
     <dt><a href="{{post.url}}"><img src="{{ site.url }}/assets/img/posts/{{ post.smallImage }}" alt="" /></a></dt>
     <dd>
