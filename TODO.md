@@ -7,18 +7,19 @@ We are technolyg experts who love solving business problems using technology.
 
 ### Our Philosophy
 - Don't build it, until you need it.
-- Your problem is our problem.
-- We are research heavy.
+- Your problem becomes our problem.
+- Research is the key to solving any problem.
 
 ### How We Work
 - Share Your Problem.
     - Problem filtering
     - 1-hr of free consultation
 - Solution Advised.
-    - pros of cons
+    - pros and cons
     - low hanging fruits
 - Solution Built.
     - develop, test, deploy
+    - knowledge transfer & smooth transition
     - provide full support
 
 ## Page: System Integration
@@ -58,6 +59,7 @@ Artifical Intelligence is Taking Over The World!
 ### Packages
 A.I. Exploration 
 A.I. Implementation
+A.I. Consulting
 
 
 ### "How can you adopt A.I., and gain technology advantage." "Share Your Problem".
